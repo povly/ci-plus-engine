@@ -7,5 +7,5 @@
         #define POVLY_API __declspec(dllimport)
     #endif
 #else
-    #define POVLY_API
+    #define POVLY_API __attribute__((visibility("default")))
 #endif

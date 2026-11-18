@@ -5,6 +5,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
+add_subdirectory(src/vendor/spdlog)
+set_target_properties(spdlog PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
 # ---------- Движок: SHARED-библиотека ----------
 file(GLOB POVLY_SOURCES CONFIGURE_DEPENDS src/engine/*.cpp)
 add_library(Povly SHARED ${POVLY_SOURCES})
@@ -14,6 +17,7 @@ target_include_directories(Povly PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 # PRIVATE: определение живёт ТОЛЬКО в компиляции движка
 target_compile_definitions(Povly PRIVATE POVLY_BUILD_DLL=1)
+target_link_libraries(Povly PUBLIC spdlog::spdlog)
 
 # ---------- Песочница: приложение ----------
 add_executable(Sandbox src/sandbox/SandboxApp.cpp)
