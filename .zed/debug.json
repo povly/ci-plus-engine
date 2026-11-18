@@ -1,0 +1,21 @@
+[
+  {
+    "label": "Debug HelloWorld (CMake)",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "program": "$ZED_WORKTREE_ROOT/HelloWorld",
+    "cwd": "$ZED_WORKTREE_ROOT",
+    "build": {
+      "command": "cmake",
+      "args": [
+        "-G",
+        "Unix Makefiles",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-S",
+        "$ZED_WORKTREE_ROOT",
+        "-B",
+        "$ZED_WORKTREE_ROOT"
+      ]
+    }
+  }
+]

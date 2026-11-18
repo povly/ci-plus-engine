@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Werror -std=c++23 -g -Wl,--dependency-file=CMakeFiles/HelloWorld.dir/link.d CMakeFiles/HelloWorld.dir/src/main.cpp.o -o HelloWorld

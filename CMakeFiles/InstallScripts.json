@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/var/www/ci_plus_engine/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
