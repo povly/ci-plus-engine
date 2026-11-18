@@ -1,3 +1,0 @@
-/var/www/ci_plus_engine/CMakeFiles/HelloWorld.dir
-/var/www/ci_plus_engine/CMakeFiles/edit_cache.dir
-/var/www/ci_plus_engine/CMakeFiles/rebuild_cache.dir
