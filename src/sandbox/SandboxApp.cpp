@@ -1,16 +1,14 @@
+#include "engine/Application.h"
 #include <Povly.h>
+#include <memory>
 
-class Sandbox: public Povly::Application {
-    public:
-        Sandbox(){
-            
-        }
+class Sandbox : public Povly::Application {
+public:
+  Sandbox() {}
 
-        ~Sandbox(){
-            
-        }
+  ~Sandbox() {}
 };
 
-Povly::Application* Povly::CreateApplication(){
-    return new Sandbox();
+std::unique_ptr<Povly::Application> Povly::CreateApplication() { 
+    return std::make_unique<Sandbox>();
 }

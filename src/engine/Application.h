@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+#include <memory>
 
 namespace Povly {
     class POVLY_API Application {
@@ -11,5 +12,5 @@ namespace Povly {
             void Run();
     };
 
-    Application* CreateApplication();
+    std::unique_ptr<Application> CreateApplication();
 }
