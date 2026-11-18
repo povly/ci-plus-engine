@@ -10,4 +10,6 @@ namespace Povly {
 
             void Run();
     };
+
+    Application* CreateApplication();
 }

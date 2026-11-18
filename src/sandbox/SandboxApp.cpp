@@ -11,8 +11,6 @@ class Sandbox: public Povly::Application {
         }
 };
 
-int main(){
-    Sandbox* sandbox = new Sandbox();
-    sandbox->Run();
-    delete sandbox;
+Povly::Application* Povly::CreateApplication(){
+    return new Sandbox();
 }
