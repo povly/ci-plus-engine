@@ -34,7 +34,8 @@
 ### Движок — основной трек на C++
 | Ресурс | Что даёт | Роль в треке |
 |---|---|---|
-| [PardCode — Game Engine Tutorial Series](https://www.youtube.com/playlist?list=PLv8DnRaQOs5-MR-zbP1QUdq5FL0FWqVzg) ([DirectX](https://www.pardcode.com/cpp-3d-game-tutorial-series) / [OpenGL](https://www.pardcode.com/opengl-3d-game-tutorial-series) версии) | C++, всё руками: Win32/X11/Cocoa, ввод, физика, entity system | **стержень фазы 1** |
+| [The Cherno — Hazel Game Engine Series](https://www.youtube.com/playlist?list=PLlrATfBNZ98dC-V-NVNb0GHQQatDY9pOP) | C++ движок с объяснениями: Application, Log, события, слои, ImGui, абстракция рендера, OpenGL, entt (ECS). Стек публичный (GLFW/spdlog/glad/GLM). Серия не закончена — поздние части в Patreon | **старт: фазы 1–2 (фактический вход в проект)** |
+| [PardCode — Game Engine Tutorial Series](https://www.youtube.com/playlist?list=PLv8DnRaQOs5-MR-zbP1QUdq5FL0FWqVzg) ([DirectX](https://www.pardcode.com/cpp-3d-game-tutorial-series) / [OpenGL](https://www.pardcode.com/opengl-3d-game-tutorial-series) версии) | C++, всё руками: Win32/X11/Cocoa, ввод, физика, entity system | сырой платформенный слой (дополнение к GLFW-подходу Hazel) |
 | [OGLDEV / Etay Meiri](https://www.youtube.com/@OGLDEV) ([ogldev.org](https://ogldev.org)) | OpenGL C++ под Win+Linux; свежая серия Vulkan For Beginners; террейн, скелетная анимация | **стержень фазы 2 и 6** |
 | [Brendan Galea — Vulkan Game Engine Tutorials](https://www.youtube.com/playlist?list=PL8327DO66nu9qYVKLDmdLW_84-yE4auCR) | Лучший C++ туториал по Vulkan + математика с выводом (закончена в 2022) | Vulkan-бэкенд позже |
 | [vkguide.dev](https://vkguide.dev/) | Текстовый гайд Vulkan 1.3 / C++20, архитектура уровня движка, GPU-driven rendering | Vulkan-бэкенд позже |
@@ -63,8 +64,8 @@
 | Фаза | Что строим | Учимся по | Оценка (соло) |
 |---|---|---|---|
 | 0 | C++ до уверенности: RAII, умные указатели, move, базовые шаблоны | Cherno C++ | постоянно |
-| 1 | Ядро: окно на 3 ОС (Win32/X11/Cocoa), game loop, ввод, логгер, ФС | PardCode (Kohi — параллельно смотреть, не писать) | 2–4 мес |
-| 2 | Рендер за `IRenderer`: OpenGL 4.5 — меши, текстуры, свет, фреймбуферы | OGLDEV / LearnOpenGL | 3–6 мес |
+| 1 | Ядро: окно, game loop, ввод, логгер, события, слои | **Hazel (Cherno) — начато: Application + Log готовы**; PardCode — сырой Win32/X11/Cocoa позже, по желанию | 2–4 мес |
+| 2 | Рендер за `IRenderer`: OpenGL 4.5 — меши, текстуры, свет, фреймбуферы | Hazel (renderer API) → досматривать у OGLDEV / LearnOpenGL, когда серия выдохнется | 3–6 мес |
 | 3 | ECS + первый геймплей: ходьба, камера, коллизии, стрельба | Churchill COMP 4300 | 2–3 мес |
 | 4 | Первый мультиплеер: 2 клиента + авторитетный сервер, синхрон движения | Фидлер | 2–4 мес |
 | 5 | Масштаб сети: interest management, дельта-снапшоты, предсказание, лаг-компенсация → 8 → 32 → 64 игрока | Фидлер + Gambetta | 4–8 мес |
@@ -87,10 +88,10 @@ Brendan Galea (практика) + vkguide.dev (архитектура). Обе 
 
 ## 6. Первый шаг (эта неделя)
 
-1. Окружение: clang/gcc + CMake + gdb на своей ОС.
-2. PardCode — Game Engine Tutorial Series, первые эпизоды; Kohi #000 параллельно — только посмотреть общую архитектуру.
+1. Окружение: clang/gcc + CMake (или premake, как в Hazel) + отладчик на своей ОС.
+2. Hazel (Cherno) — продолжать с текущего места (Application + Log готовы); Kohi — параллельно смотреть только общую архитектуру.
 3. Прочитать: Фидлер, «What Every Programmer Needs To Know About Game Networking».
-4. Цель месяца: своё окно, собирающееся на трёх ОС.
+4. Цель месяца: пройдены Window/Events/Layers, движок рисует первый квад по своей абстракции рендера; сборка на второй ОС.
 
 ## 7. Справочные цифры (чтобы калибровать ожидания, а не пугаться)
 

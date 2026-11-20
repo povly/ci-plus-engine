@@ -1,16 +1,17 @@
 #pragma once
 
-#include "Core.h"
 #include <memory>
 
+#include "Core.h"
+
 namespace Povly {
-    class POVLY_API Application {
-        public:
-            Application();
-            virtual ~Application();
+class POVLY_API Application {
+ public:
+  Application();
+  virtual ~Application();
 
-            void Run();
-    };
+  void Run();
+};
 
-    std::unique_ptr<Application> CreateApplication();
-}
+std::unique_ptr<Application> CreateApplication();
+}  // namespace Povly

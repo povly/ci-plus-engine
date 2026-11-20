@@ -1,15 +1,16 @@
 #include "Application.h"
 
-namespace Povly {
-    Application::Application(){
-        
-    }
-    
-    Application::~Application(){
-        
-    }
+#include "engine/Events/ApplicationEvent.h"
+#include "engine/Log.h"
 
-    void Application::Run(){
-        while(true);
-    }
+namespace Povly {
+Application::Application() {}
+
+Application::~Application() {}
+
+void Application::Run() {
+  WindowResizeEvent e(1280, 720);
+  POVLY_CORE_TRACE(e);
+  while (true);
 }
+}  // namespace Povly
